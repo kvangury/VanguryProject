@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+       <title>Vangury Project</title>
+        
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+         <script src="libraries/jstorage.min.js"></script> 
+         <script src="scripts/ContactModel.js" type="text/javascript"></script>
+         <script src="scripts/DataContext.js" type="text/javascript"></script>
+         <script src="scripts/Mainjs.js" type="text/javascript"></script>
+         <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script> 
+
+
+        
+    </head>
+    <body>
+      
+      
+          <div data-role="page" id="contacts-list-page" data-title="My Contacts">
+            <div data-role="header" data-position="fixed">
+                <h1>My Contacts</h1>
+                <a href="#contact-editor-page" class="uti-btn-right" data-theme="b" data-icon="plus">New</a>
+            </div>
+            <div data-role="content" id="contacts-list-content">
+            </div>
+            
+        
+        </div>
+
+   
+    <div data-role="page" id="contact-editor-page" data-title="Edit Contacts">
+        <div data-role="header" data-position="fixed">
+            <a href="#contacts-list-page" data-icon="back" data-rel="back">Cancel</a>
+            <h1>Edit Contacts</h1>
+            <a id="save-contact-button" href="" data-theme="b" data-icon="check">Save</a>
+        </div>
+        <div data-role="content">
+            <form action="" method="post" id="contact-editor-form">
+                <label for="contact-fname-editor">First Name:</label>
+                <input type="text" name="contact-fname-editor" id="contact-fname-editor" value="" />
+				<label for="contact-lname-editor">Last Name</label>
+                <input type="text" name="contact-lname-editor" id="contact-lname-editor" value="" />
+				<label for="contact-number-editor">Number</label>
+                <input type="text" name="contact-number-editor" id="contact-number-editor" value="" />
+				<label for="contact-address-editor">Address</label>
+                <input type="text" name="contact-address-editor" id="contact-address-editor" value="" />
+				<label for="contact-email-editor">Email Id</label>
+                <input type="text" name="contact-email-editor" id="contact-email-editor" value="" />
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed" class="ui-bar">
+            <a id="delete-contact-button" data-icon="delete" data-transition="fade" data-rel="dialog">
+                Delete
+            </a>
+        </div>
+	
+    </div>
+
+  
+    <div id="invalid-contact-dialog" data-role="dialog" data-title="Invalid Contact" data-theme="e">
+        <div data-role="header" data-theme="e">
+            <h1>Invalid Contact Details</h1>
+        </div>
+        <div data-role="content">
+            <p>Name and Phone number is mandatory.</p>
+        </div>
+    </div>
+ 
+    <div id="confirm-delete-contact-dialog" data-role="dialog" data-title="Delete Contact">
+        <div data-role="header">
+            <h1>Delete Contact</h1>
+        </div>
+        <div data-role="content">
+            <div id="delete-contact-content-placeholder"></div>
+            <a id="cancel-delete-contact-button" data-role="button" data-theme="b" data-rel="back">No</a>
+            <a id="ok-to-delete-contact-button" data-role="button" data-theme="f">Yes</a>
+        </div>
+    </div>
+   </body>
+</html>
